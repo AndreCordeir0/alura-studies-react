@@ -1,4 +1,6 @@
 import React from "react";
+import Item from "./Item/Item";
+import './style.scss';
 
 function Lista(){
     const tarefas: Array<Tarefa>  = [{
@@ -17,23 +19,18 @@ function Lista(){
         id:3
     }]    
     return(
-        <div style={{marginTop: "40px",width:"220px"}} className="card is-flex is-justify-content-center">
             <div className="card-content">
-                <label className="label" htmlFor="">Estudos do dia</label>
+                <label className="label" style={{textAlign:'center'}} htmlFor="">Estudos do dia</label>
                 <div className="content">
                     <ul>
                         {tarefas.map((tarefa,index)=>{
                         return ( 
-                            <li key={tarefa.id} onClick={ () =>console.log(tarefa.id)}>
-                                <h3>{tarefa.tarefa}</h3>   
-                                <span>{tarefa.tempo}</span>
-                            </li>           
+                            <Item key={tarefa.id} {...tarefa}  />
                         )             
                         })}
                     </ul>
                 </div>
             </div>
-        </div>
     )
 }
 

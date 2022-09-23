@@ -1,0 +1,14 @@
+.grid{
+    background-color: rgb(0, 0, 0,0.5);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.time-label{
+    border-radius: 4px;
+    outline: unset;
+    border: unset;
+    height: 35px;
+}
