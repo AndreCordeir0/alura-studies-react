@@ -11,7 +11,10 @@ export default function Cronometro(){
                 <span>0</span>
             </div>
             <div >
-                <Botao children="Iniciar"/>
+                {/* <Botao children="Iniciar"/> */}
+                <Botao>
+                    Iniciar                    
+                </Botao>
             </div>
         </div>
     )
