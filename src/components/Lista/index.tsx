@@ -1,31 +1,19 @@
 import React from "react";
+import Tarefa from "../../models/Tarefa";
 import Item from "./Item/Item";
 import './style.scss';
 
-function Lista(){
-    const tarefas: Array<Tarefa>  = [{
-        tarefa:'React',
-        tempo:'02:00',
-        id:1
-    },
-    {
-        tarefa:'Java',
-        tempo:'03:00',
-        id:2
-    },
-    {
-        tarefa:'JavaScript',
-        tempo:'03:00',
-        id:3
-    }]    
+function Lista(props:Props){
+    const {tarefas,isSelecionado} = props
     return(
             <div className="card-content">
                 <label className="label" style={{textAlign:'center'}} htmlFor="">Estudos do dia</label>
                 <div className="content">
                     <ul>
-                        {tarefas.map((tarefa,index)=>{
+
+                        {tarefas.map((item,index)=>{
                         return ( 
-                            <Item key={tarefa.id} {...tarefa}  />
+                            <Item {...{item,isSelecionado}} /> 
                         )             
                         })}
                     </ul>
@@ -34,9 +22,8 @@ function Lista(){
     )
 }
 
-type Tarefa = {
-    tarefa:string,
-    tempo:string,
-    id:number
+type Props ={
+    tarefas:Tarefa[]
+    isSelecionado : (a:Tarefa) => void;
 }
 export default Lista;
