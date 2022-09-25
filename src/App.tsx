@@ -7,9 +7,9 @@ import './style.css'
 
 function App() {
   const [tarefas,setTarefas] = useState<Tarefa[]>([])
-  const [selecionado,setSelecionado] = useState<Tarefa>();
+  const [selecionado,setSelecionado] = useState<Tarefa >();
   let props = {tarefas,isSelecionado};
-
+  
 
   function isSelecionado(objetoSelecionado:Tarefa){    
     setSelecionado(objetoSelecionado);
@@ -29,8 +29,9 @@ function App() {
       <Formulario setTarefas = {setTarefas} />
       <Lista {...props} />
       </div>
-      <Cronometro/>
+      <Cronometro selecionado={selecionado} />
     </div>
+
   );
 }
 

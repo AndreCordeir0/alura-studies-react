@@ -18,8 +18,12 @@ function Formulario({setTarefas}:{setTarefas :React.Dispatch<React.SetStateActio
             id:uuidv4()
         }
         setTarefas((t)=> [...t,obj]);
+        resetaForm();
     }        
-    
+    function resetaForm(){
+        setTarefa('');
+        setTempo('');
+    }
 
     return(
         <form action="" onSubmit={(e) => adicionarTarefa(e)} className="grid">
