@@ -14,6 +14,7 @@ function Formulario({setTarefas}:{setTarefas :React.Dispatch<React.SetStateActio
         let obj:Tarefa = {
             tarefa,
             tempo,
+            completado:false,
             selecionado:false,
             id:uuidv4()
         }
@@ -35,7 +36,7 @@ function Formulario({setTarefas}:{setTarefas :React.Dispatch<React.SetStateActio
             </div>
             <div className="field">
                 <label className="label" htmlFor="tempo">Tempo</label>
-                <input className="time-label" step='1' min="00:00:00"   style={{width: "210px"}} value={tempo} onChange={(e) => setTempo(e.target.value)} type="time" name="tempo" id="tempo"  required/>
+                <input className="time-label" step='' min="00:00:00"   style={{width: "210px"}} value={tempo} onChange={(e) => setTempo(e.target.value)} type="time" name="tempo" id="tempo"  required/>
             </div>
             <button className="button is-success">Salvar</button>
         </form>

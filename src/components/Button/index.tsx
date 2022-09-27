@@ -1,8 +1,7 @@
 
-export default function Botao(props:any) {
-    
+export default function Botao(props:any) {    
     return(
-        <button>{props.children}</button>
+        <button onClick={props?.onClick}>{props.children}</button>
     )
     
 }

@@ -3,7 +3,7 @@ import Tarefa from "../../models/Tarefa";
 import Item from "./Item/Item";
 import './style.scss';
 
-function Lista(props:Props){
+export default function Lista(props:Props){
     const {tarefas,isSelecionado} = props
     return(
             <div className="card-content">
@@ -13,7 +13,7 @@ function Lista(props:Props){
 
                         {tarefas.map((item,index)=>{
                         return ( 
-                            <Item {...{item,isSelecionado}} /> 
+                            <Item key={item.id} {...{item,isSelecionado}} /> 
                         )             
                         })}
                     </ul>
@@ -26,4 +26,3 @@ type Props ={
     tarefas:Tarefa[]
     isSelecionado : (a:Tarefa) => void;
 }
-export default Lista;
