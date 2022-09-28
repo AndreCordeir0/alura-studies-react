@@ -10,6 +10,9 @@ function Formulario({setTarefas}:{setTarefas :React.Dispatch<React.SetStateActio
 
 
     function adicionarTarefa(e:any){
+        if(!tarefa && !tempo){
+            return;            
+        }
         e.preventDefault();
         let obj:Tarefa = {
             tarefa,

@@ -12,6 +12,9 @@ function App() {
   
 
   function isSelecionado(objetoSelecionado:Tarefa){    
+    if(objetoSelecionado.completado){
+      return;
+    }
     setSelecionado(objetoSelecionado);
 
     setTarefas((tarefaAntiga)=> tarefaAntiga.map(v=>({
